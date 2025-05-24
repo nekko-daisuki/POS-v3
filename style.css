@@ -433,8 +433,8 @@ body {
     .product-category-button,
     .product-button {
         /* ボタン自体の大きさを調整 */
-        font-size: 0.75em; /* フォントサイズをさらに小さく */
-        padding: 2px; /* パディングをさらに小さく */
+        font-size: 0.7em; /* フォントサイズをさらに小さく */
+        padding: 1px; /* パディングをさらに小さく */
         min-width: unset; /* ボタンの最小幅を解除して、コンテンツに応じて縮小できるようにする */
     }
     .product-category-button {
