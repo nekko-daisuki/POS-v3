@@ -146,7 +146,7 @@ body {
 /* 商品選択パネル */
 .menu-panel {
     width: 65%;
-    min-width: 500px; /* ここが横幅を狭めた際に問題になる可能性 */
+    min-width: 500px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -155,7 +155,7 @@ body {
 
 .product-group {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 通常は5列 */
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     flex-shrink: 0;
 }
@@ -180,7 +180,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 5px;
-    min-width: 60px; /* ボタンの最小幅を維持 */
+    min-width: 60px;
 }
 
 .product-category-button {
@@ -374,8 +374,6 @@ body {
         grid-column: span 2;
         font-size: 1.1em;
     }
-    /* スマホ表示では空ボタンは非表示 */
-    /* ここは以前の指定のままで良いでしょう、スマートフォンでは画面が狭いため */
     .product-button.empty {
         display: none;
     }
@@ -385,7 +383,7 @@ body {
 @media (max-width: 1024px) and (orientation: portrait) {
     .pos-container {
         flex-direction: column; /* 縦並びにする */
-        width: 95%; /* 縦画面でも十分な幅を確保 */
+        width: 80%; /* 縦画面で80%の幅にする */
         height: 95vh; /* 縦いっぱいに広げる */
         max-width: unset; /* 最大幅を解除 */
         min-height: unset; /* 最小高さを解除して、flex-growで調整 */
@@ -430,19 +428,19 @@ body {
 
     .product-group {
         grid-template-columns: repeat(5, 1fr); /* 縦画面でも5列に */
-        gap: 8px; /* ボタン間の隙間を調整 */
+        gap: 5px; /* ボタン間の隙間は維持 */
+    }
+    .product-category-button,
+    .product-button {
+        /* ボタン自体の大きさを調整 */
+        font-size: 0.75em; /* フォントサイズをさらに小さく */
+        padding: 2px; /* パディングをさらに小さく */
+        min-width: unset; /* ボタンの最小幅を解除して、コンテンツに応じて縮小できるようにする */
     }
     .product-category-button {
         grid-column: span 1; /* カテゴリボタンも1列分のみ使う */
-        font-size: 0.95em; /* 商品ボタンと同じフォントサイズに */
-        padding: 5px; /* 商品ボタンと同じパディングに */
-    }
-    .product-button {
-        font-size: 0.95em; /* 既存の .product-button と同じ値にする */
-        padding: 5px; /* 既存の .product-button と同じ値にする */
     }
     .product-button.empty {
-        /* 空のボタンの表示は、5列を維持するために必要 */
         display: initial; /* emptyクラスのボタンも表示されるように変更 */
         border: none;
         box-shadow: none;
@@ -463,7 +461,6 @@ body {
         grid-column: span 1; /* カテゴリボタンも1列に */
         font-size: 1.1em;
     }
-    /* スマートフォンでは空ボタンを非表示にしても良い場合が多い */
     .product-button.empty {
         display: none;
     }
