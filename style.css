@@ -338,24 +338,67 @@ body {
 /* レスポンシブ対応 */
 @media (max-width: 800px) {
     .pos-container {
-        flex-direction: column;
+        flex-direction: column; /* 画面が狭くなったら縦並びにする */
         width: 100%;
-        height: 100vh;
+        height: 100vh; /* 縦いっぱいに広げる */
         border-radius: 0;
         box-shadow: none;
     }
 
     .order-panel,
     .menu-panel {
-        width: 100%;
-        min-width: unset;
+        width: 100%; /* 全幅を使う */
+        min-width: unset; /* 最小幅を解除 */
         padding: 15px;
         border-right: none;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #eee; /* 下に境界線 */
     }
 
     .order-panel {
-        height: 35vh;
+        height: 35vh; /* 注文リストの高さを固定 */
+        flex-shrink: 0; /* 縮まない */
+    }
+    .order-list {
+        height: calc(100% - 150px); /* 親要素の高さから、タイトルとサマリーとアクションの高さを引く */
+    }
+
+    .menu-panel {
+        flex-grow: 1; /* 残りのスペースを使う */
+        overflow-y: auto; /* スクロール可能にする */
+    }
+
+    .product-group {
+        /* スマートフォンではすべて2列に */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-category-button {
+        grid-column: span 2; /* カテゴリボタンは2列分使う */
+        font-size: 1.1em; /* スマホでのフォントサイズ調整 */
+    }
+    .product-button.empty {
+        display: none; /* スマホ表示では空ボタンは非表示 */
+    }
+}
+
+@media (max-width: 1024px) and (orientation: portrait) { /* iPad縦向き（またはタブレット）のブレークポイントを追加 */
+    .pos-container {
+        flex-direction: column; /* 縦並びにする */
+        width: 90%; /* 縦画面でも少し余白を持たせる */
+        height: 95vh; /* 縦いっぱいに広げる */
+        max-width: none; /* 最大幅を解除 */
+    }
+
+    .order-panel,
+    .menu-panel {
+        width: 100%; /* 全幅を使う */
+        min-width: unset; /* 最小幅を解除 */
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px solid #eee; /* 下に境界線 */
+    }
+
+    .order-panel {
+        height: 40vh; /* 注文リストの高さを少し増やす */
         flex-shrink: 0;
     }
     .order-list {
@@ -368,23 +411,23 @@ body {
     }
 
     .product-group {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 縦画面では3列に */
     }
     .product-category-button {
-        grid-column: span 2;
-        font-size: 1.1em;
+        grid-column: span 3; /* カテゴリボタンは3列分使う */
+        font-size: 1.2em;
     }
     .product-button.empty {
-        display: none;
+        display: none; /* 空ボタンは非表示 */
     }
 }
 
 @media (max-width: 480px) {
     .product-group {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 非常に狭い画面では1列に */
     }
     .product-category-button {
-        grid-column: span 1;
+        grid-column: span 1; /* カテゴリボタンも1列に */
         font-size: 1.1em;
     }
 }
