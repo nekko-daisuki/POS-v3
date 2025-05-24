@@ -10,7 +10,7 @@ body {
 
 .pos-container {
     display: flex;
-    width: 80%; /* 画面幅に応じて調整。ここでは元の95%に戻します */
+    width: 95%; /* 画面幅に応じて調整。ここでは元の95%に戻します */
     max-width: 1280px; /* 最大幅を元の値に戻します */
     background-color: #fff;
     border-radius: 8px;
@@ -433,8 +433,8 @@ body {
     .product-category-button,
     .product-button {
         /* ボタン自体の大きさを調整 */
-        font-size: 0.7em; /* フォントサイズをさらに小さく */
-        padding: 1px; /* パディングをさらに小さく */
+        font-size: 0.65em; /* フォントサイズをさらに小さく */
+        padding: 0.5px; /* パディングをさらに小さく */
         min-width: unset; /* ボタンの最小幅を解除して、コンテンツに応じて縮小できるようにする */
     }
     .product-category-button {
