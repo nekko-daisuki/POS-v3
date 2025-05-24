@@ -13,7 +13,7 @@ body {
     width: 76%; /* Changed from 95% to approximately 80% of that */
     max-width: 1024px; /* Changed from 1280px to approximately 80% of that */
     background-color: #fff;
-    border-radius: 810px;
+    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     min-height: 600px;
