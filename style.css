@@ -13,7 +13,7 @@ body {
     width: 76%; /* Changed from 95% to approximately 80% of that */
     max-width: 1024px; /* Changed from 1280px to approximately 80% of that */
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 8px; /* Corrected from 810px to 8px */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     min-height: 600px;
@@ -431,13 +431,14 @@ body {
         gap: 8px; /* ボタン間の隙間を調整 */
     }
     .product-category-button {
-        grid-column: span 4; /* カテゴリボタンは4列分使う */
-        font-size: 1.1em; /* フォントサイズを調整 */
-        padding: 10px 5px; /* パディングを調整 */
+        /* ここを修正 */
+        grid-column: span 1; /* カテゴリボタンも1列分のみ使う */
+        font-size: 0.95em; /* 商品ボタンと同じフォントサイズに */
+        padding: 5px; /* 商品ボタンと同じパディングに */
     }
     .product-button {
-        font-size: 0.9em; /* 商品ボタンのフォントサイズを調整 */
-        padding: 5px; /* 商品ボタンのパディングを調整 */
+        font-size: 0.95em; /* 既存の .product-button と同じ値にする */
+        padding: 5px; /* 既存の .product-button と同じ値にする */
     }
     .product-button.empty {
         display: none; /* 空ボタンは非表示 */
