@@ -155,7 +155,7 @@ body {
 
 .product-group {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr); /* 通常は5列 */
     gap: 10px;
     flex-shrink: 0;
 }
@@ -427,11 +427,10 @@ body {
     }
 
     .product-group {
-        grid-template-columns: repeat(4, 1fr); /* 縦画面では4列に */
+        grid-template-columns: repeat(5, 1fr); /* 縦画面でも5列に */
         gap: 8px; /* ボタン間の隙間を調整 */
     }
     .product-category-button {
-        /* ここを修正 */
         grid-column: span 1; /* カテゴリボタンも1列分のみ使う */
         font-size: 0.95em; /* 商品ボタンと同じフォントサイズに */
         padding: 5px; /* 商品ボタンと同じパディングに */
@@ -441,7 +440,14 @@ body {
         padding: 5px; /* 既存の .product-button と同じ値にする */
     }
     .product-button.empty {
-        display: none; /* 空ボタンは非表示 */
+        /* 空のボタンは非表示にするか、適切な幅で表示するか検討 */
+        /* 例えば、空のボタンを2つ持つ行がある場合、横5列を維持するために表示させる必要があります */
+        /* ここでは、空のボタンの表示/非表示はそのまま維持します */
+        display: initial; /* emptyクラスのボタンも表示されるように変更 */
+        border: none;
+        box-shadow: none;
+        cursor: default;
+        background-color: transparent;
     }
 }
 
