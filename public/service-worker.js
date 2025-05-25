@@ -1,6 +1,6 @@
 const CACHE_NAME = 'pos-v3-cache-v1'; // キャッシュ名。更新したらバージョンを上げてください
 const urlsToCache = [
-  'https://pos-v3.vercel.app/', // ルートパス
+  '/', // ルートパス
   '/index.html', // メインのHTMLファイル
   '/manifest.json', // manifestファイル自体もキャッシュ
   '/styles.css', // 必要なCSSファイル
