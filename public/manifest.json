@@ -2,7 +2,7 @@
   "name": "社交喫茶知恵の庭 POSレジ",
   "short_name": "知恵の庭レジ",
   "description": "社交喫茶知恵の庭の販売・売上管理を行うPOSレジです。",
-  "start_url": "https://pos-v3.vercel.app/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
